@@ -1,0 +1,80 @@
+{{#each erros}}
+    <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+<!--
+<div class="card">
+    <div class="card-body">
+        <h4>Novo Produto</h4>
+        <form action="">
+            <label for="Código do Produto"> Código do Produto: </label>
+            <input type="text" name="cod_produto" class="form-control">
+            <input type="text" name="cod_MP">
+            <input type="text" placeholder="Peso da MP" name="peso_MP">
+            <input type="text" placeholder="Peso do Produto" name="peso_produto">
+            <input type="text" placeholder="Etapa-1" name="etapa1">
+            <input type="text" placeholder="Etapa-2" name="etapa2">
+            <input type="text" placeholder="Etapa-3" name="etapa3">
+            <input type="text" placeholder="Etapa-4" name="etapa4">
+            <input type="text" placeholder="Etapa-5" name="etapa5">
+            <input type="text" placeholder="Setup-1" name="setup1">
+            <input type="text" placeholder="Setup-2" name="setup2">
+            <input type="text" placeholder="Setup-3" name="setup3">
+            <input type="text" placeholder="Setup-4" name="setup4">
+            <input type="text" placeholder="Setup-5" name="setup5">
+            <input type="text" placeholder="Adicionais" name="add_produto">
+            <input type="text" placeholder="Setup-1" name="setup1"> 
+            <br />
+            <button class="btn btn-success" type="submit">Incluir Produto</button>        
+        </form>        
+    </div>
+</div> -->
+<div class="container">
+    <h4>Novo Produto</h4>
+<form action="/admin/produtos/novos" method="POST">
+  <div class="form-row">
+    <div class="col-md-2 mb-4">
+      <label for="validationServer01">Código</label>
+      <input type="text" class="form-control is-valid" id="validationServer01" value="3004241" placeholder="3010228" name="cod_produto" required>
+    </div>
+    <div class="col-md-10 mb-4">
+      <label for="validationServer02">Nome do Produto</label>
+      <input type="text" class="form-control is-valid" id="validationServer02" value="BUCHA DE REGULAGEM" placeholder="BUCHA DE REGULAGEM" name="desc_produto" required>
+    </div>
+</div>
+  <div class="form-row">
+   <div class="col-md-3 mb-3"> 
+   <label for="categoria">Categoria</label>
+  <select class="custom-select my-1 mr-sm-2" id="informar">
+       {{#each categorias}}
+    <option value="{{_id}}">{{nome}}</option>  
+        {{else}}
+    <option value="">Nenhuma categoria registrada</option>
+    {{/each}}
+   </select>
+</div>
+    <div class="col-md-6 mb-3">
+      <label for="validationServer03">Tipo de Matéria-Prima</label>
+      <input type="text" class="form-control is-invalid" id="validationServer03" value="ACO REDONDO SAE1045 - Ø19,05MM -    2,23/M" placeholder="ACO REDONDO SAE1045 - Ø19,05MM -    2,23/M" required>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationServer04">Quantidade</label>
+      <input type="text" class="form-control is-invalid" id="validationServer04" value="1,250" placeholder="1,250" name"qtd_mp"= required>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationServer05">Peso do Produto</label>
+      <input type="text" class="form-control is-invalid" id="validationServer05" value="0,415" placeholder="0,415" mane="peso_produto" required>
+    </div>
+     <div class="col-md-3 mb-3">
+      <label for="validationServer05">Adicionais</label>
+      <input type="text" class="form-control is-invalid" id="validationServer05" value="0" placeholder="add" mane="add_produto" required>
+    </div>
+     <div class="col-md-3 mb-3">
+      <label for="validationServer05">Peso da Peça</label>
+      <input type="text" class="form-control is-invalid" id="validationServer05" placeholder="Roteiro" name="roteiro" required>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Salvar Produto</button>
+</form>
+</div>
