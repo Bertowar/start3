@@ -84,13 +84,13 @@ router.post("/categorias/edit", (req, res) => {
         }).catch((error) => {
             req.flash("error_msg", "Houve um erro interno ao salvar a edição da categoria! :(")
             res.redirect("/admin/categorias")
-        })
-
+		})
+		
     }).catch((err) => {
         req.flash("error_msg", "Houve um erro ao editar a categoria")
         res.redirect("/admin/categorias")
-    })
-
+	})
+	
 })
 
 router.post("/categorias/deletar", (req, res) => {
@@ -109,20 +109,19 @@ router.get("/produtos", (req, res) => {
 
 router.get("/produtos/add", (req, res) => {
    Categoria.find().then((categorias) => {
-       res.render("admin/addprodutos",{categorias: categorias})
+       res.render("admin/addprodutos", {categorias: categorias})
    }).catch((err) => {
        req.flash("error_msg", "Houve um erro ao carregar o formulário! :(")
        res.redirect("/admin")
    })   
 })
-
-router.post("/produtos/novos", (req, res) => {
+router.post("/produtos/novo", (req, res) => {
     res.render("/admin/produtos/add")
 
     var erros = []
 
     if(req.body.categoria == "0"){
-        erros.push({text0: "Selecione uma categoria"})
+        erros.push({texto: "Selecione uma categoria"})
     }
 
     if(erros.length > 0){
@@ -130,13 +129,13 @@ router.post("/produtos/novos", (req, res) => {
     }else{
         const novoProduto = {
             cod_produto: req.body.cod_produto,
-            desc_produto: req.body.desc_produto,
-            cat_produto: req.body.cat_produto,
+            desc_produto: req.body.desc_produto
+           /* cat_produto: req.body.cat_produto,
             mp_produto: req.body.mp_produto,
             qtd_mp: req.body.qtd_mp,
             peso_produto: req.body.peso_produto,
             add_produto: req.body.add_produto,
-            roteiro: req.body.roteiro
+            roteiro: req.body.roteiro  */
         }
 
         new Produto(novoProduto).save().then(() => {

@@ -3,46 +3,21 @@
 {{else}}
 
 {{/each}}
-<!--
-<div class="card">
-    <div class="card-body">
-        <h4>Novo Produto</h4>
-        <form action="">
-            <label for="Código do Produto"> Código do Produto: </label>
-            <input type="text" name="cod_produto" class="form-control">
-            <input type="text" name="cod_MP">
-            <input type="text" placeholder="Peso da MP" name="peso_MP">
-            <input type="text" placeholder="Peso do Produto" name="peso_produto">
-            <input type="text" placeholder="Etapa-1" name="etapa1">
-            <input type="text" placeholder="Etapa-2" name="etapa2">
-            <input type="text" placeholder="Etapa-3" name="etapa3">
-            <input type="text" placeholder="Etapa-4" name="etapa4">
-            <input type="text" placeholder="Etapa-5" name="etapa5">
-            <input type="text" placeholder="Setup-1" name="setup1">
-            <input type="text" placeholder="Setup-2" name="setup2">
-            <input type="text" placeholder="Setup-3" name="setup3">
-            <input type="text" placeholder="Setup-4" name="setup4">
-            <input type="text" placeholder="Setup-5" name="setup5">
-            <input type="text" placeholder="Adicionais" name="add_produto">
-            <input type="text" placeholder="Setup-1" name="setup1"> 
-            <br />
-            <button class="btn btn-success" type="submit">Incluir Produto</button>        
-        </form>        
-    </div>
-</div> -->
+
 <div class="container">
     <h4>Novo Produto</h4>
-<form action="/admin/produtos/novos" method="POST">
+<form action="/admin/produtos/novo" method="POST">
   <div class="form-row">
     <div class="col-md-2 mb-4">
-      <label for="validationServer01">Código</label>
-      <input type="text" class="form-control is-valid" id="validationServer01" value="3004241" placeholder="3010228" name="cod_produto" required>
+      <label for="cod_produto">Código</label>
+      <input type="text" id="cod_produto" name="cod_produto" class="form-control is-valid">
     </div>
     <div class="col-md-10 mb-4">
-      <label for="validationServer02">Nome do Produto</label>
-      <input type="text" class="form-control is-valid" id="validationServer02" value="BUCHA DE REGULAGEM" placeholder="BUCHA DE REGULAGEM" name="desc_produto" required>
+      <label for="desc_produto">Nome do Produto</label>
+      <input type="text" id="desc_produto" name="desc_produto" class="form-control is-valid">
     </div>
 </div>
+<!--
   <div class="form-row">
    <div class="col-md-3 mb-3"> 
    <label for="categoria">Categoria</label>
@@ -74,7 +49,35 @@
       <label for="validationServer05">Peso da Peça</label>
       <input type="text" class="form-control is-invalid" id="validationServer05" placeholder="Roteiro" name="roteiro" required>
     </div>
-  </div>
+  </div> -->
   <button class="btn btn-primary" type="submit">Salvar Produto</button>
 </form>
 </div>
+
+<!--
+<div class="card">
+    <div class="card-body">
+        <h4>Novo Produto</h4>
+        <form action="">
+            <label for="Código do Produto"> Código do Produto: </label>
+            <input type="text" name="cod_produto" class="form-control">
+            <input type="text" name="cod_MP">
+            <input type="text" placeholder="Peso da MP" name="peso_MP">
+            <input type="text" placeholder="Peso do Produto" name="peso_produto">
+            <input type="text" placeholder="Etapa-1" name="etapa1">
+            <input type="text" placeholder="Etapa-2" name="etapa2">
+            <input type="text" placeholder="Etapa-3" name="etapa3">
+            <input type="text" placeholder="Etapa-4" name="etapa4">
+            <input type="text" placeholder="Etapa-5" name="etapa5">
+            <input type="text" placeholder="Setup-1" name="setup1">
+            <input type="text" placeholder="Setup-2" name="setup2">
+            <input type="text" placeholder="Setup-3" name="setup3">
+            <input type="text" placeholder="Setup-4" name="setup4">
+            <input type="text" placeholder="Setup-5" name="setup5">
+            <input type="text" placeholder="Adicionais" name="add_produto">
+            <input type="text" placeholder="Setup-1" name="setup1"> 
+            <br />
+            <button class="btn btn-success" type="submit">Incluir Produto</button>        
+        </form>        
+    </div>
+</div> -->
